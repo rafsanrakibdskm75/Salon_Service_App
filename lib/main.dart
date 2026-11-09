@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Home Screen/Home_Screen.dart';
+import 'Home Screen/Onboardings_screen.dart';
 import 'Home Screen/Splash_screen.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SplashScreen(),
+      home: OnboardingsScreen(),
     );
   }
 }
