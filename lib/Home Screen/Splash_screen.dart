@@ -4,6 +4,7 @@ import 'package:salon_service_app/Home%20Screen/Home_Screen.dart';
 
 import '../Utils/AppColor/AppColors.dart';
 import '../widgets/custom_text.dart';
+import 'Onboardings_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   navigate()async{
     await Future.delayed(Duration(seconds: 3));
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>OnboardingsScreen()));
   }
 
   @override
