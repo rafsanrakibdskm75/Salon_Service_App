@@ -1,34 +1,55 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:salon_service_app/Home%20Screen/Home_Screen.dart';
 
+import '../Utils/AppColor/AppColors.dart';
 import '../widgets/custom_text.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+
+  navigate()async{
+    await Future.delayed(Duration(seconds: 3));
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    navigate();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset('assets/image/splash.png',
+      backgroundColor: AppColors.Black,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/image/splash.png',
               width: 144,
               height: 144,
               fit: BoxFit.contain,
-              ),
-              const SizedBox(height: 20),
-              CustomText(
-                text: 'Welcome to Salon Service App',
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                textAlign: TextAlign.center,
-              ),
-              const CircularProgressIndicator(),
-            ],
-          ),
+            ),
+            const SizedBox(height: 20),
+            CustomText(
+              text: 'Welcome to Salon Service App',
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              textAlign: TextAlign.center,
+            ),
+            const CircularProgressIndicator(),
+          ],
         ),
+      ),
     );
   }
 }
